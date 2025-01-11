@@ -1,0 +1,110 @@
+{
+    "epoch_loss": {
+        "type": "index_value",
+        "index": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "value": [
+            0.5865599416775894,
+            0.08617918179852331,
+            0.043148987882380536,
+            0.022938557814339407,
+            0.013301927437955769,
+            0.019410293406261495,
+            0.01026342595655265,
+            0.010678816099860657,
+            0.010858642698520795,
+            0.01031454356856726
+        ]
+    },
+    "train_oa": {
+        "type": "index_value",
+        "index": [
+            10
+        ],
+        "value": [
+            99.81815820236393
+        ]
+    },
+    "train_aa": {
+        "type": "index_value",
+        "index": [
+            10
+        ],
+        "value": [
+            99.75810414585386
+        ]
+    },
+    "train_kappa": {
+        "type": "index_value",
+        "index": [
+            10
+        ],
+        "value": [
+            99.75907448480999
+        ]
+    },
+    "max_oa": {
+        "type": "index_value",
+        "index": [
+            10
+        ],
+        "value": [
+            99.81815820236393
+        ]
+    },
+    "eval_time": 16.100910902023315,
+    "param": {
+        "data": {
+            "data_sign": "Pavia",
+            "data_file": "Pavia_0.1_pc",
+            "patch_size": 25,
+            "serve_patch_size": 25,
+            "batch_size": 64,
+            "num_classes": 9,
+            "pca": 10,
+            "dim_heads": 64,
+            "spectral_size": 10,
+            "random_rotate": false,
+            "noise_type": "clean"
+        },
+        "net": {
+            "trainer": "transformer",
+            "use_mask": true,
+            "net_type": "just_pixel",
+            "mlp_head_dim": 64,
+            "depth": 2,
+            "dim": 64,
+            "heads": 20,
+            "mask_pct": 50
+        },
+        "train": {
+            "epochs": 10,
+            "lr": 0.001,
+            "weight_decay": 0,
+            "temp": 20
+        },
+        "uniq_name": "pavia_0.1_split",
+        "train_sign": "train",
+        "path_model_save": "./save_models/pavia_0.1_split",
+        "path_res": "./res/pavia_0.1_split_12241612",
+        "path_pic": "./res/pavia_0.1_split_12241612.png"
+    },
+    "eval": {
+        "classification": "              precision    recall  f1-score   support\n\n           0     0.9953    0.9993    0.9973      5967\n           1     0.9997    0.9987    0.9992     16784\n           2     1.0000    0.9952    0.9976      1889\n           3     0.9917    0.9989    0.9953      2757\n           4     0.9992    1.0000    0.9996      1210\n           5     1.0000    0.9991    0.9996      4526\n           6     0.9967    1.0000    0.9983      1197\n           7     0.9973    0.9928    0.9950      3313\n           8     1.0000    0.9941    0.9971       852\n\n    accuracy                         0.9982     38495\n   macro avg     0.9978    0.9976    0.9977     38495\nweighted avg     0.9982    0.9982    0.9982     38495\n",
+        "oa": 99.81815820236393,
+        "confusion": "[[ 5963     0     0     4     0     0     0     0     0]\n [    6 16763     0    15     0     0     0     0     0]\n [    0     0  1880     0     0     0     0     9     0]\n [    0     3     0  2754     0     0     0     0     0]\n [    0     0     0     0  1210     0     0     0     0]\n [    0     2     0     1     0  4522     1     0     0]\n [    0     0     0     0     0     0  1197     0     0]\n [   22     0     0     2     0     0     0  3289     0]\n [    0     0     0     1     1     0     3     0   847]]",
+        "each_acc": "[ 99.93296464  99.87488084  99.52355744  99.89118607 100.\n  99.91162174 100.          99.27558104  99.41314554]",
+        "aa": 99.75810414585386,
+        "kappa": 99.75907448480999
+    }
+}

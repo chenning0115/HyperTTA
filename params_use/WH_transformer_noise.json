@@ -1,0 +1,34 @@
+{
+    "data": {
+        "data_sign": "WH",
+        "data_file": "WH_0.2_pc",
+        "patch_size": 21,
+        "serve_patch_size": 21,
+        "batch_size": 32,
+        "num_classes": 22,
+        "pca": -1,
+        "dim_heads": 64,
+        "append_dim": false,
+        "spectral_size": 270,
+        "random_rotate": true,
+        "noise_type": "clean"
+    },
+    "net": {
+        "trainer": "transformer",
+        "use_mask": true,
+        "mlp_head_dim": 64,
+        "depth": 3,
+        "dim": 64,
+        "heads": 20,
+        "kernal": 3,
+        "padding": 1
+    },
+    "train": {
+        "epochs": 50,
+        "lr": 0.001,
+        "weight_decay": 0
+    },
+    "uniq_name": "wh_0.2transNEW",
+    "train_sign": "train",
+    "path_model_save": ""
+}

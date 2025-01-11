@@ -1,0 +1,128 @@
+{
+    "epoch_loss": {
+        "type": "index_value",
+        "index": [
+            1,
+            2,
+            3,
+            4,
+            5,
+            6,
+            7,
+            8,
+            9,
+            10
+        ],
+        "value": [
+            1.7181179078312088,
+            0.6828223933997835,
+            0.3401710454349259,
+            0.20157362048077884,
+            0.13583448682446483,
+            0.09009246271605867,
+            0.06779286730763522,
+            0.04841970555505975,
+            0.03641922293893928,
+            0.028963009782576307
+        ]
+    },
+    "train_oa": {
+        "type": "index_value",
+        "index": [
+            10
+        ],
+        "value": [
+            98.51377739205901
+        ]
+    },
+    "train_aa": {
+        "type": "index_value",
+        "index": [
+            10
+        ],
+        "value": [
+            91.28918769141289
+        ]
+    },
+    "train_kappa": {
+        "type": "index_value",
+        "index": [
+            10
+        ],
+        "value": [
+            98.30514832337695
+        ]
+    },
+    "max_oa": {
+        "type": "index_value",
+        "index": [
+            10
+        ],
+        "value": [
+            98.51377739205901
+        ]
+    },
+    "eval_time": 3.6496033668518066,
+    "param": {
+        "data": {
+            "data_sign": "Indian",
+            "data_file": "Indian_0.1_pc",
+            "patch_size": 17,
+            "serve_patch_size": 9,
+            "batch_size": 64,
+            "num_classes": 16,
+            "pca": 200,
+            "dim_heads": 64,
+            "spectral_size": 200,
+            "random_rotate": false,
+            "noise_type": "clean"
+        },
+        "net": {
+            "trainer": "transformer",
+            "use_mask": true,
+            "mlp_dim": 8,
+            "depth": 2,
+            "dim": 64,
+            "heads": 20,
+            "kernal": 3,
+            "padding": 1,
+            "task_num": 3,
+            "expert_num": 1,
+            "task_label_list": [
+                [
+                    1,
+                    2,
+                    3
+                ],
+                [
+                    9,
+                    10,
+                    11
+                ]
+            ],
+            "task_weight": [
+                1,
+                0,
+                0
+            ]
+        },
+        "train": {
+            "epochs": 10,
+            "lr": 0.001,
+            "weight_decay": 0
+        },
+        "uniq_name": "Indian_0.1_pc",
+        "train_sign": "train",
+        "path_model_save": "./save_models/Indian_0.1_pc",
+        "path_res": "./res/Indian_0.1_pc_12241627",
+        "path_pic": "./res/Indian_0.1_pc_12241627.png"
+    },
+    "eval": {
+        "classification": "                              precision    recall  f1-score   support\n\n                     Alfalfa     1.0000    0.9756    0.9877        41\n                 Corn-notill     0.9732    0.9883    0.9807      1285\n                Corn-mintill     0.9890    0.9652    0.9770       747\n                        Corn     0.9665    0.9484    0.9573       213\n               Grass-pasture     0.9882    0.9654    0.9767       434\n                 Grass-trees     0.9820    0.9985    0.9902       657\n         Grass-pasture-mowed     1.0000    0.9200    0.9583        25\n               Hay-windrowed     1.0000    1.0000    1.0000       430\n                        Oats     0.0000    0.0000    0.0000        18\n              Soybean-notill     0.9862    0.9805    0.9834       874\n             Soybean-mintill     0.9968    0.9923    0.9946      2209\n               Soybean-clean     0.9532    0.9925    0.9724       533\n                       Wheat     0.9684    1.0000    0.9840       184\n                       Woods     0.9913    1.0000    0.9956      1138\nBuildings-Grass-Trees-Drives     0.9775    1.0000    0.9886       347\n          Stone-Steel-Towers     0.9865    0.8795    0.9299        83\n\n                    accuracy                         0.9851      9218\n                   macro avg     0.9224    0.9129    0.9173      9218\n                weighted avg     0.9834    0.9851    0.9841      9218\n",
+        "oa": 98.51377739205901,
+        "confusion": "[[  40    0    0    0    0    0    0    0    0    1    0    0    0    0\n     0    0]\n [   0 1270    1    0    0    0    0    0    0    9    3    0    0    1\n     1    0]\n [   0   16  721    5    0    0    0    0    0    0    0    5    0    0\n     0    0]\n [   0    0    0  202    0    0    0    0    0    0    0   11    0    0\n     0    0]\n [   0    0    6    0  419    0    0    0    0    1    2    0    6    0\n     0    0]\n [   0    1    0    0    0  656    0    0    0    0    0    0    0    0\n     0    0]\n [   0    0    0    0    2    0   23    0    0    0    0    0    0    0\n     0    0]\n [   0    0    0    0    0    0    0  430    0    0    0    0    0    0\n     0    0]\n [   0    0    1    1    3    8    0    0    0    0    1    0    0    0\n     4    0]\n [   0    8    0    0    0    0    0    0    0  857    1    0    0    8\n     0    0]\n [   0   10    0    0    0    4    0    0    0    0 2192    0    0    1\n     2    0]\n [   0    0    0    1    0    0    0    0    0    1    0  529    0    0\n     1    1]\n [   0    0    0    0    0    0    0    0    0    0    0    0  184    0\n     0    0]\n [   0    0    0    0    0    0    0    0    0    0    0    0    0 1138\n     0    0]\n [   0    0    0    0    0    0    0    0    0    0    0    0    0    0\n   347    0]\n [   0    0    0    0    0    0    0    0    0    0    0   10    0    0\n     0   73]]",
+        "each_acc": "[ 97.56097561  98.83268482  96.51941098  94.83568075  96.5437788\n  99.847793    92.         100.           0.          98.05491991\n  99.230421    99.24953096 100.         100.         100.\n  87.95180723]",
+        "aa": 91.28918769141289,
+        "kappa": 98.30514832337695
+    }
+}

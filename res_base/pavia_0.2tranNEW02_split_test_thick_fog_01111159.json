@@ -1,0 +1,47 @@
+{
+    "eval_time": 6.0792624950408936,
+    "param": {
+        "data": {
+            "data_sign": "Pavia",
+            "data_file": "Pavia_0.2_pc",
+            "patch_size": 13,
+            "serve_patch_size": 13,
+            "batch_size": 64,
+            "num_classes": 9,
+            "pca": -1,
+            "dim_heads": 64,
+            "spectral_size": 103,
+            "random_rotate": true,
+            "noise_type": "thick_fog"
+        },
+        "net": {
+            "trainer": "transformer",
+            "use_mask": false,
+            "net_type": "just_pixel",
+            "mlp_head_dim": 64,
+            "depth": 2,
+            "dim": 64,
+            "heads": 20,
+            "mask_pct": 50
+        },
+        "train": {
+            "epochs": 50,
+            "lr": 0.001,
+            "weight_decay": 0,
+            "temp": 20
+        },
+        "uniq_name": "pavia_0.2tranNEW02_split",
+        "train_sign": "test",
+        "path_model_save": "./save_models/pavia_0.2tranNEW02_split",
+        "path_res": "./res_base/pavia_0.2tranNEW02_split_test_thick_fog_01111159",
+        "path_pic": "./res_base/pavia_0.2tranNEW02_split_test_thick_fog_01111159.png"
+    },
+    "eval": {
+        "classification": "              precision    recall  f1-score   support\n\n           0     0.5721    0.1938    0.2895      5304\n           1     0.8523    0.9283    0.8887     14919\n           2     0.9575    0.3085    0.4667      1679\n           3     0.8996    0.2705    0.4159      2451\n           4     0.4044    0.9907    0.5744      1076\n           5     0.2648    0.4775    0.3407      4023\n           6     0.9187    0.5949    0.7222      1064\n           7     0.3254    0.4520    0.3784      2945\n           8     0.9148    0.2695    0.4163       757\n\n    accuracy                         0.6200     34218\n   macro avg     0.6788    0.4984    0.4992     34218\nweighted avg     0.6924    0.6200    0.6074     34218\n",
+        "oa": 61.99660997136011,
+        "confusion": "[[ 1028    47    23     0   608  2181    56  1346    15]\n [    6 13850     0    74   133   756     0    98     2]\n [   20    23   518     0    14   283     0   819     2]\n [    0   439     0   663   634   665     0    50     0]\n [   10     0     0     0  1066     0     0     0     0]\n [  107  1880     0     0     0  1921     0   115     0]\n [  102     0     0     0    14     0   633   315     0]\n [   11     6     0     0   148  1449     0  1331     0]\n [  513     5     0     0    19     0     0    16   204]]",
+        "each_acc": "[19.38159879 92.83464039 30.85169744 27.0501836  99.07063197 47.750435\n 59.4924812  45.19524618 26.94848085]",
+        "aa": 49.8417106021919,
+        "kappa": 48.92563832456487
+    }
+}

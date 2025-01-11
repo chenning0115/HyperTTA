@@ -1,0 +1,39 @@
+{
+    "data": {
+        "data_sign": "PaviaU",
+        "data_file": "PaviaU_80",
+        "patch_size": 25,
+        "serve_patch_size": 25,
+        "batch_size": 64,
+        "num_classes": 9,
+        "pca": 102,
+        "dim_heads": 64,
+        "spectral_size": 102,
+        "random_rotate": false,
+        "noise_type": "fog",
+        "fog_level": "0.125",
+        "Zero_mean_gaussian_sigma": "0.3",
+        "diff_gaussian_level": "0.3",
+        "salt_amount": "0.15",
+        "compression_ratio": "300",
+        "kernel_size": "10",
+        "poisson_level": "13"
+    },
+    "net": {
+        "trainer": "transformer",
+        "use_mask": true,
+        "net_type": "just_pixel",
+        "mlp_head_dim": 64,
+        "depth": 2,
+        "dim": 64,
+        "heads": 20,
+        "mask_pct": 50
+    },
+    "train": {
+        "epochs": 10,
+        "lr": 0.001,
+        "weight_decay": 0,
+        "temp": 20
+    },
+    "uniq_name": "tent-paviaU_fog0.125_10_epoch"
+}

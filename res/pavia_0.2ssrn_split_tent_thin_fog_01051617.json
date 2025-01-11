@@ -1,0 +1,82 @@
+{
+    "train_oa": {
+        "type": "index_value",
+        "index": [
+            1,
+            2
+        ],
+        "value": [
+            71.23736045356245,
+            71.28996434625051
+        ]
+    },
+    "train_aa": {
+        "type": "index_value",
+        "index": [
+            1,
+            2
+        ],
+        "value": [
+            65.24929538151594,
+            65.13840708835265
+        ]
+    },
+    "train_kappa": {
+        "type": "index_value",
+        "index": [
+            1,
+            2
+        ],
+        "value": [
+            61.09940121028457,
+            61.128726810870525
+        ]
+    },
+    "eval_time": 12.920006036758423,
+    "param": {
+        "data": {
+            "data_sign": "Pavia",
+            "data_file": "Pavia_0.2_pc",
+            "diffusion_sign": false,
+            "patch_size": 13,
+            "test_ratio": 0.95,
+            "batch_size": 64,
+            "unlabelled_multiple": 1,
+            "num_classes": 9,
+            "pca": -103,
+            "dim_heads": 64,
+            "spectral_size": 103,
+            "perclass": 10,
+            "sample": 2,
+            "noise_type": "thin_fog"
+        },
+        "net": {
+            "trainer": "SSRN",
+            "net_type": "just_pixel",
+            "k": 49,
+            "l": 24,
+            "num_classes": 9
+        },
+        "train": {
+            "epochs": 200,
+            "lr": 0.0003,
+            "weight_decay": 0,
+            "use_unlabel": true,
+            "weight": 0.1,
+            "temp": 10
+        },
+        "uniq_name": "pavia_0.2ssrn_split",
+        "train_sign": "tent",
+        "path_model_save": "./save_models/pavia_0.2ssrn_split",
+        "path_res": "./res/pavia_0.2ssrn_split_tent_thin_fog_01051617",
+        "path_pic": "./res/pavia_0.2ssrn_split_tent_thin_fog_01051617.png"
+    },
+    "eval": {
+        "classification": "              precision    recall  f1-score   support\n\n           0     0.6747    0.8239    0.7419      5304\n           1     0.7310    0.7968    0.7625     14919\n           2     0.7396    0.7427    0.7412      1679\n           3     0.7897    0.7980    0.7938      2451\n           4     0.9497    0.8950    0.9215      1076\n           5     0.4561    0.2379    0.3127      4023\n           6     0.9579    0.1711    0.2903      1064\n           7     0.7039    0.8105    0.7535      2945\n           8     0.7138    0.5865    0.6439       757\n\n    accuracy                         0.7129     34218\n   macro avg     0.7463    0.6514    0.6624     34218\nweighted avg     0.7058    0.7129    0.6945     34218\n",
+        "oa": 71.28996434625051,
+        "confusion": "[[ 4370   530    33    22     0    37     0   295    17]\n [ 1156 11888    45   425     0   971     6   322   106]\n [    0   160  1247    10     1     0     0   225    36]\n [   21   318     4  1956     0   102     0    47     3]\n [    0    91     0     0   963     3     0    17     2]\n [   13  2910     5    19    30   957     1    81     7]\n [  854     4     0     1     1     5   182    17     0]\n [   53   116   312    28    19    23     0  2387     7]\n [   10   246    40    16     0     0     1     0   444]]",
+        "each_acc": "[82.39064857 79.68362491 74.27039905 79.80416157 89.49814126 23.78821775\n 17.10526316 81.05263158 58.65257596]",
+        "aa": 65.13840708835265,
+        "kappa": 61.128726810870525
+    }
+}
