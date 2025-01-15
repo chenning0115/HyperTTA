@@ -8,7 +8,7 @@
         "batch_size": 64,
         "unlabelled_multiple": 1,
         "num_classes": 9,
-        "pca": -103,
+        "pca": -1,
         "dim_heads": 64,
         "spectral_size": 103,
         "perclass": 10,

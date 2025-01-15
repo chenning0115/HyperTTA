@@ -238,7 +238,7 @@ class BaseTrainer(object):
         assert self.model_loaded == True
         self.tent_net = configure_model(self.net)  # self.net
         params, param_names = collect_params(self.tent_net)
-        optimizer = optim.SGD(params, lr=0.0001, momentum=0.9)
+        optimizer = optim.SGD(params, lr=0.0001, momentum=0.90)
         self.tent_model = Tent(self.tent_net, optimizer, steps=1, episodic=False)
         return True
 
@@ -247,7 +247,7 @@ class BaseTrainer(object):
             Test the model on the test set, applying TENT adaptation if tent_model is defined.
         """
         epochs = self.params['train'].get('epochs', 100)
-        tent_epochs = 2
+        tent_epochs = 10
         epoch_avg_loss = utils.AvgrageMeter()
         total_loss = 0
 

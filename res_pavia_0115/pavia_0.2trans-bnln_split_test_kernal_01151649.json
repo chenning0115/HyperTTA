@@ -1,0 +1,47 @@
+{
+    "eval_time": 7.219671726226807,
+    "param": {
+        "data": {
+            "data_sign": "Pavia",
+            "data_file": "Pavia_0.2_pc",
+            "patch_size": 15,
+            "serve_patch_size": 15,
+            "batch_size": 64,
+            "num_classes": 9,
+            "pca": -1,
+            "dim_heads": 64,
+            "spectral_size": 103,
+            "random_rotate": true,
+            "noise_type": "kernal"
+        },
+        "net": {
+            "trainer": "transformer_bnln",
+            "use_mask": false,
+            "net_type": "just_pixel",
+            "mlp_head_dim": 64,
+            "depth": 2,
+            "dim": 64,
+            "heads": 20,
+            "mask_pct": 50
+        },
+        "train": {
+            "epochs": 50,
+            "lr": 0.001,
+            "weight_decay": 0,
+            "temp": 20
+        },
+        "uniq_name": "pavia_0.2trans-bnln_split",
+        "train_sign": "test",
+        "path_model_save": "./save_models/pavia_0.2trans-bnln_split",
+        "path_res": "./res_pavia_0115/pavia_0.2trans-bnln_split_test_kernal_01151649",
+        "path_pic": "./res_pavia_0115/pavia_0.2trans-bnln_split_test_kernal_01151649.png"
+    },
+    "eval": {
+        "classification": "              precision    recall  f1-score   support\n\n           0     0.9966    0.0436    0.0835      6631\n           1     0.6550    1.0000    0.7915     18649\n           2     0.2006    0.9667    0.3322      2099\n           3     0.8332    0.2934    0.4340      3064\n           4     0.8997    1.0000    0.9472      1345\n           5     0.6400    0.1068    0.1830      5029\n           6     0.0000    0.0000    0.0000      1330\n           7     0.0000    0.0000    0.0000      3682\n           8     0.9387    0.4530    0.6111       947\n\n    accuracy                         0.5652     42776\n   macro avg     0.5737    0.4293    0.3758     42776\nweighted avg     0.6339    0.5652    0.4702     42776\n",
+        "oa": 56.52001122124556,
+        "confusion": "[[  289  1578  4536   163     3     7     0    27    28]\n [    0 18649     0     0     0     0     0     0     0]\n [    0    47  2029     0     0    23     0     0     0]\n [    0  2085    52   899     0    28     0     0     0]\n [    0     0     0     0  1345     0     0     0     0]\n [    0  4454    35     3     0   537     0     0     0]\n [    1    38  1272     0     0    19     0     0     0]\n [    0  1594  1857     6     0   225     0     0     0]\n [    0    27   336     8   147     0     0     0   429]]",
+        "each_acc": "[  4.358317   100.          96.66507861  29.34073107 100.\n  10.67806721   0.           0.          45.30095037]",
+        "aa": 42.927016028339416,
+        "kappa": 37.13651202481142
+    }
+}

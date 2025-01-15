@@ -99,6 +99,11 @@ def collect_params(model):
                 if np in ['weight', 'bias']:  # weight is scale, bias is shift
                     params.append(p)
                     names.append(f"{nm}.{np}")
+        if isinstance(m, nn.LayerNorm):
+            for np, p in m.named_parameters():
+                if np in ['weight', 'bias']:
+                    params.append(p)
+                    names.append(f"{nm}.{np}")
     print("params:-------------------")
     print(names)
     print("params:-------------------")
@@ -120,6 +125,14 @@ def configure_model(model_0):
             m.track_running_stats = False
             m.running_mean = None
             m.running_var = None
+        if isinstance(m, nn.LayerNorm):
+            m.requires_grad_(True)
+            m.track_running_stats = False
+            m.running_mean = None
+            m.running_var = None
+
+
+
     return model
 
 
@@ -346,33 +359,4 @@ class TransformerTrainer(BaseTrainer):
         loss_main = nn.CrossEntropyLoss()(logits, target) 
 
         return loss_main   
-
-class SSRNTrainer(BaseTrainer):
-    def __init__(self, params):
-        super(SSRNTrainer, self).__init__(params)
-        self.lr = None
-        self.weight_decay = None
-
-    def real_init(self):
-        # net
-        self.net = SSRN.SSRN(self.params).to(self.device)
-        # loss
-        self.criterion = nn.CrossEntropyLoss()
-        # optimizer
-        self.lr = self.train_params.get('lr', 0.001)
-        self.weight_decay = self.train_params.get('weight_decay', 5e-3)
-        self.optimizer = optim.Adam(self.net.parameters(), lr=self.lr, weight_decay=self.weight_decay)
-
-    def get_loss(self, outputs, target):
-        """
-            A_vecs: [batch, dim]
-            B_vecs: [batch, dim]
-            logits: [batch, class_num]
-        """
-        logits = outputs
-        
-        loss_main = nn.CrossEntropyLoss()(logits, target) 
-
-        return loss_main   
- 
 

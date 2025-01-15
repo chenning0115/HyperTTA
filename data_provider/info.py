@@ -107,7 +107,7 @@ Pavia_kvs_params = {
     },
 
     "poisson": {
-            "snr_db" : 13 
+            "snr_db" : 30
     },
 
     "salt_pepper": {
@@ -133,7 +133,7 @@ Pavia_kvs_params = {
             'spe_start': 0,
             'spe_end': 0,
             'band_width': 0,
-            'omega': 0.2,
+            'omega': 0.3,
             'alpha': 0.01,
             'beta': 1.0
     },
@@ -142,7 +142,7 @@ Pavia_kvs_params = {
             'spe_start': 0,
             'spe_end': 0,
             'band_width': 0,
-            'omega': 0.3,
+            'omega': 0.5,
             'alpha': 0.01,
             'beta': 1.0
     }

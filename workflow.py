@@ -13,7 +13,7 @@ import plot
 from datetime import datetime
 from data_provider.info import noise_type_list 
 
-DEFAULT_RES_SAVE_PATH_PREFIX = "./res_wh"
+DEFAULT_RES_SAVE_PATH_PREFIX = "./res_pavia_0115"
 
 def train_by_param(param):
     #0. recorder reset防止污染数据
@@ -61,13 +61,14 @@ include_path = [
     # 'indian_SSRN.json',
     # 'indian_ssftt.json',
 
-    # 'pavia_transformer_noise.json',
+    'pavia_transformer_noise.json',
+    # 'pavia_transformer_CNN.json',
     # 'pavia_SSRN.json',
     # 'pavia_ssftt.json',
 
-    'WH_transformer_noise.json',
-    'WH_transformer_CNN.json',
-    'WH_SSRN.json',
+    # 'WH_transformer_noise.json',
+    # 'WH_transformer_CNN.json',
+    # 'WH_SSRN.json',
 ]
 
 
@@ -120,12 +121,12 @@ def run_one_multi_times(json_str, ori_uniq_name):
         print('model eval done of %s...' % uniq_name)
 
 
-# noise_type_list_temp = ['additive', 'salt_pepper', 'kernal', 'thick_fog', 'zmguass', 'additive', 'poisson',  'stripes', 'deadlines']
+noise_type_list_temp = ['additive', 'salt_pepper', 'kernal', 'thick_fog', 'zmguass', 'additive', 'poisson',  'stripes', 'deadlines']
 
 # noise_type_list_temp = ['salt_pepper', 'kernal', 'thick_fog']
 # noise_type_list_temp = ['additive', 'salt_pepper', 'kernal', 'thick_fog']
 # noise_type_list_temp = ['salt_pepper', 'kernal', 'thin_fog', 'thick_fog']
-noise_type_list_temp = [ 'kernal', 'thick_fog', 'poisson',  'stripes', 'deadlines']
+# noise_type_list_temp = [ 'kernal', 'thick_fog', 'poisson',  'stripes', 'deadlines']
 # noise_type_list_temp = ['thick_fog']
 
 def run_serving_mode(json_str, train_sign='test'): # serving_type = 'test' or 'tent'
@@ -134,7 +135,10 @@ def run_serving_mode(json_str, train_sign='test'): # serving_type = 'test' or 't
         os.makedirs(save_path_prefix)
 
     uniq_name = json_str.get('uniq_name', "")
-    path_model_save = "%s/%s" % (utils.model_save_path_prefix, uniq_name)
+    model_name = json_str.get('model_name', "")
+    if model_name == "":
+        model_name = uniq_name
+    path_model_save = "%s/%s" % (utils.model_save_path_prefix, model_name)
     json_str['path_model_save'] = path_model_save 
     print('start to train %s...' % uniq_name)
 
@@ -168,5 +172,5 @@ def run_test_tent():
      
 
 if __name__ == "__main__":
-    run_all()
+    # run_all()
     run_test_tent() 

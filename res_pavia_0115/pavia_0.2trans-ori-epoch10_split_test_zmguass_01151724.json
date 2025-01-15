@@ -1,0 +1,48 @@
+{
+    "eval_time": 6.319961309432983,
+    "param": {
+        "data": {
+            "data_sign": "Pavia",
+            "data_file": "Pavia_0.2_pc",
+            "patch_size": 15,
+            "serve_patch_size": 15,
+            "batch_size": 64,
+            "num_classes": 9,
+            "pca": -1,
+            "dim_heads": 64,
+            "spectral_size": 103,
+            "random_rotate": true,
+            "noise_type": "zmguass"
+        },
+        "net": {
+            "trainer": "transformer",
+            "use_mask": false,
+            "net_type": "just_pixel",
+            "mlp_head_dim": 64,
+            "depth": 2,
+            "dim": 64,
+            "heads": 20,
+            "mask_pct": 50
+        },
+        "train": {
+            "epochs": 50,
+            "lr": 0.001,
+            "weight_decay": 0,
+            "temp": 20
+        },
+        "uniq_name": "pavia_0.2trans-ori-epoch10_split",
+        "model_name": "pavia_0.2trans_split",
+        "train_sign": "test",
+        "path_model_save": "./save_models/pavia_0.2trans_split",
+        "path_res": "./res_pavia_0115/pavia_0.2trans-ori-epoch10_split_test_zmguass_01151724",
+        "path_pic": "./res_pavia_0115/pavia_0.2trans-ori-epoch10_split_test_zmguass_01151724.png"
+    },
+    "eval": {
+        "classification": "              precision    recall  f1-score   support\n\n           0     0.5982    0.7687    0.6728      6631\n           1     0.8591    0.7649    0.8093     18649\n           2     0.5671    0.5493    0.5581      2099\n           3     0.5772    0.9804    0.7267      3064\n           4     0.9253    0.9948    0.9588      1345\n           5     0.6103    0.1656    0.2606      5029\n           6     0.0000    0.0000    0.0000      1330\n           7     0.4388    0.9011    0.5902      3682\n           8     0.6429    0.0285    0.0546       947\n\n    accuracy                         0.6788     42776\n   macro avg     0.5799    0.5726    0.5146     42776\nweighted avg     0.6893    0.6788    0.6493     42776\n",
+        "oa": 67.87684682999813,
+        "confusion": "[[ 5097     1   316     2     1     0     0  1211     3]\n [  359 14265   100  1888    30   507     0  1492     8]\n [  252     5  1153     1     0    21     0   667     0]\n [   14    18     8  3004     0     1     0    18     1]\n [    7     0     0     0  1338     0     0     0     0]\n [  537  2287   160   307    51   833     0   851     3]\n [ 1187     0   137     0     1     2     0     3     0]\n [  171    28   159     2     3     1     0  3318     0]\n [  896     0     0     0    22     0     0     2    27]]",
+        "each_acc": "[76.86623435 76.49203711 54.93091949 98.04177546 99.4795539  16.56392921\n  0.         90.11406844  2.85110876]",
+        "aa": 57.25995852469299,
+        "kappa": 58.21643118757764
+    }
+}

@@ -204,7 +204,7 @@ class HSIDataLoader(object):
                     train_test_Index += 1
                 all_index2pos[patchIndex] =[start_x, start_y]
                 patchIndex = patchIndex + 1
-        return zeroPaddedX, y, trainX_index2pos, testX_index2pos, train_test_Index, all_index2pos, margin, self.patch_size 
+        return zeroPaddedX, y, trainX_index2pos, testX_index2pos, train_testX_index2pos, all_index2pos, margin, self.patch_size 
 
     def applyPCA(self, X, numComponents=30):
         newX = np.reshape(X, (-1, X.shape[2]))
@@ -323,7 +323,7 @@ class HSIDataLoader(object):
         train_test_set = DataSetIter(base_img, labels, train_test_index2pos, margin, patch_size, self.append_dim, random_rotate=self.random_rotate)
         allset = DataSetIter(base_img, labels, all_index2pos, margin, patch_size, self.append_dim, random_rotate=self.random_rotate) 
         
-        return trainset, unlabelset, testset, train_test_split, allset
+        return trainset, unlabelset, testset, train_test_set, allset
  
     def generate_torch_dataset(self):
         # 0. 判断是否使用numpy数据集

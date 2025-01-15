@@ -428,8 +428,8 @@ class Fog(DataNoiseGeneratorBase):
 
 
 # kvs_params = info.Indian_kvs_params
-# kvs_params = info.Pavia_kvs_params
-kvs_params = info.WH_kvs_params
+kvs_params = info.Pavia_kvs_params
+# kvs_params = info.WH_kvs_params
 
 kvs = {
     # 'jpeg': JPEGGenerator,
@@ -439,7 +439,7 @@ kvs = {
     # 'salt_pepper': SaltPepper,
     # 'stripes': Stripes,
     # 'deadlines': Deadlines,
-    'kernal': Kernal,
+    # 'kernal': Kernal,
     'thin_fog':Fog,
     'thick_fog':Fog
 
@@ -465,9 +465,9 @@ def run_gen(data_sign):
 
 def run_all():
     # data_signs = ['Pavia', 'Indian', 'Salinas', 'WH', 'Honghu']
-    # data_signs = ['Pavia']
+    data_signs = ['Pavia']
     # data_signs = ['Indian']
-    data_signs = ['WH', 'Honghu']
+    # data_signs = ['WH', 'Honghu']
     for data_sign in data_signs:
         run_gen(data_sign)
 

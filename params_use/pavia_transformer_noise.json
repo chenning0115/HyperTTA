@@ -28,7 +28,8 @@
         "weight_decay": 0,
         "temp": 20
     },
-    "uniq_name": "pavia_0.2tranNEW03_split",
+    "uniq_name": "pavia_0.2trans-ori-epoch10_split",
+    "model_name": "pavia_0.2trans_split",
     "train_sign": "train",
     "path_model_save": ""
 }

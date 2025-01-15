@@ -1,0 +1,47 @@
+{
+    "eval_time": 6.094048738479614,
+    "param": {
+        "data": {
+            "data_sign": "Pavia",
+            "data_file": "Pavia_0.2_pc",
+            "patch_size": 15,
+            "serve_patch_size": 15,
+            "batch_size": 64,
+            "num_classes": 9,
+            "pca": -1,
+            "dim_heads": 64,
+            "spectral_size": 103,
+            "random_rotate": true,
+            "noise_type": "thick_fog"
+        },
+        "net": {
+            "trainer": "transformer_bnln",
+            "use_mask": false,
+            "net_type": "just_pixel",
+            "mlp_head_dim": 64,
+            "depth": 2,
+            "dim": 64,
+            "heads": 20,
+            "mask_pct": 50
+        },
+        "train": {
+            "epochs": 50,
+            "lr": 0.001,
+            "weight_decay": 0,
+            "temp": 20
+        },
+        "uniq_name": "pavia_0.2trans-bnln_split",
+        "train_sign": "test",
+        "path_model_save": "./save_models/pavia_0.2trans-bnln_split",
+        "path_res": "./res_pavia_0115/pavia_0.2trans-bnln_split_test_thick_fog_01151649",
+        "path_pic": "./res_pavia_0115/pavia_0.2trans-bnln_split_test_thick_fog_01151649.png"
+    },
+    "eval": {
+        "classification": "              precision    recall  f1-score   support\n\n           0     0.4343    0.0882    0.1467      6631\n           1     0.7879    0.7989    0.7934     18649\n           2     1.0000    0.0605    0.1141      2099\n           3     0.9893    0.1815    0.3067      3064\n           4     0.1881    0.9279    0.3128      1345\n           5     0.1550    0.4162    0.2259      5029\n           6     1.0000    0.0398    0.0766      1330\n           7     0.4271    0.1773    0.2506      3682\n           8     0.9099    0.1067    0.1909       947\n\n    accuracy                         0.4749     42776\n   macro avg     0.6546    0.3108    0.2686     42776\nweighted avg     0.6429    0.4749    0.4608     42776\n",
+        "oa": 47.491584065831304,
+        "confusion": "[[  585    42     0     3  1512  4045     0   444     0]\n [    0 14899     0     1    63  3686     0     0     0]\n [   27     0   127     0  1168   397     0   379     1]\n [    0  1685     0   556   164   646     0     4     9]\n [    0     0     0     0  1248    97     0     0     0]\n [  177  2271     0     2   439  2093     0    47     0]\n [  164     0     0     0  1090    21    53     2     0]\n [    0    13     0     0   679  2337     0   653     0]\n [  394     0     0     0   272   180     0     0   101]]",
+        "each_acc": "[ 8.82219876 79.8916832   6.05050024 18.1462141  92.78810409 41.61861205\n  3.98496241 17.73492667 10.66525871]",
+        "aa": 31.078051136481545,
+        "kappa": 30.557662112519278
+    }
+}

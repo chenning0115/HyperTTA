@@ -14,6 +14,7 @@ from utils import device
 
 from BNTentTrainer import SSRNTrainer, CNNTrainer
 from LNTentTrainer import TransformerTrainer, SSFTTNEWTrainer, SQSTrainer, TransformerOriTrainer
+from BNLNtentTrainer import TransformerTrainer as TransformerTrainerBNLN
 
 
 def get_trainer(params):
@@ -30,6 +31,9 @@ def get_trainer(params):
         return SSFTTNEWTrainer(params)
     if trainer_type == "sqs":
         return SQSTrainer(params)
+
+    if trainer_type == "transformer_bnln":
+        return TransformerTrainerBNLN(params)
 
     assert Exception("Trainer not implemented!")
 
