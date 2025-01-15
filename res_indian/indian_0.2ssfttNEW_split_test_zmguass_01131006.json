@@ -1,0 +1,42 @@
+{
+    "eval_time": 1.2041015625,
+    "param": {
+        "data": {
+            "data_sign": "Indian",
+            "data_file": "Indian_0.2_pc",
+            "diffusion_sign": false,
+            "patch_size": 13,
+            "test_ratio": 0.95,
+            "batch_size": 64,
+            "num_classes": 16,
+            "pca": -1,
+            "dim_heads": 64,
+            "spectral_size": 200,
+            "append_dim": true,
+            "noise_type": "zmguass"
+        },
+        "net": {
+            "trainer": "ssftt",
+            "conv2d_out": 64,
+            "dim": 64
+        },
+        "train": {
+            "epochs": 100,
+            "lr": 0.001,
+            "weight_decay": 0
+        },
+        "uniq_name": "indian_0.2ssfttNEW_split",
+        "train_sign": "test",
+        "path_model_save": "./save_models/indian_0.2ssfttNEW_split",
+        "path_res": "./res_indian/indian_0.2ssfttNEW_split_test_zmguass_01131006",
+        "path_pic": "./res_indian/indian_0.2ssfttNEW_split_test_zmguass_01131006.png"
+    },
+    "eval": {
+        "classification": "                              precision    recall  f1-score   support\n\n                     Alfalfa     0.0000    0.0000    0.0000        36\n                 Corn-notill     0.0000    0.0000    0.0000      1142\n                Corn-mintill     0.4444    0.0120    0.0235       664\n                        Corn     0.0000    0.0000    0.0000       189\n               Grass-pasture     0.8136    0.4974    0.6174       386\n                 Grass-trees     0.0000    0.0000    0.0000       584\n         Grass-pasture-mowed     0.0000    0.0000    0.0000        22\n               Hay-windrowed     0.0000    0.0000    0.0000       382\n                        Oats     0.0000    0.0000    0.0000        16\n              Soybean-notill     0.0000    0.0000    0.0000       777\n             Soybean-mintill     0.4584    0.3590    0.4026      1964\n               Soybean-clean     0.0547    0.7089    0.1015       474\n                       Wheat     0.0000    0.0000    0.0000       164\n                       Woods     1.0000    0.1136    0.2041      1012\nBuildings-Grass-Trees-Drives     1.0000    0.0032    0.0065       308\n          Stone-Steel-Towers     0.0000    0.0000    0.0000        74\n\n                    accuracy                         0.1656      8194\n                   macro avg     0.2357    0.1059    0.0847      8194\n                weighted avg     0.3485    0.1656    0.1588      8194\n",
+        "oa": 16.560898218208443,
+        "confusion": "[[   0    0    0    0    0    0    0    0    0    0    5   31    0    0\n     0    0]\n [   0    0    0    0    0    0    0    0    0    0  142 1000    0    0\n     0    0]\n [   0    0    8   17    0    0    0    0    0    0  145  494    0    0\n     0    0]\n [   0    0    0    0    0    0    0    0    0    0   17  172    0    0\n     0    0]\n [   0    0    0    0  192    0   24    0    0    0   16  154    0    0\n     0    0]\n [   0    0    0    0    4    0    0    0    0    0   45  535    0    0\n     0    0]\n [   0    0    0    0    0    0    0    0    0    0    0   22    0    0\n     0    0]\n [   0    0    0    0    0    0    0    0    0    0    0  382    0    0\n     0    0]\n [   0    0    0    0    0    0    0    0    0    0    0   16    0    0\n     0    0]\n [   0    0    0    4    0    0    0    0    0    0  216  557    0    0\n     0    0]\n [   0    0    5    0    0    0    0    0    0    0  705 1254    0    0\n     0    0]\n [   0    0    0    0    0    0    0    0    0    0  138  336    0    0\n     0    0]\n [   0    0    0    0    0    0    0    0    0    0   11  153    0    0\n     0    0]\n [   1    0    0    0   40    0   59    2    0    0    4  791    0  115\n     0    0]\n [   0    0    5   30    0    0    3    0    0    0   85  184    0    0\n     1    0]\n [   0    0    0    0    0    0    0    0    0    0    9   65    0    0\n     0    0]]",
+        "each_acc": "[ 0.          0.          1.20481928  0.         49.74093264  0.\n  0.          0.          0.          0.         35.89613035 70.88607595\n  0.         11.36363636  0.32467532  0.        ]",
+        "aa": 10.588516868969153,
+        "kappa": 8.123485780810524
+    }
+}

@@ -1,0 +1,42 @@
+{
+    "eval_time": 0.28012967109680176,
+    "param": {
+        "data": {
+            "data_sign": "Indian",
+            "data_file": "Indian_0.5_pc",
+            "diffusion_sign": false,
+            "patch_size": 13,
+            "test_ratio": 0.95,
+            "batch_size": 64,
+            "num_classes": 16,
+            "pca": 30,
+            "dim_heads": 64,
+            "spectral_size": 30,
+            "append_dim": true,
+            "noise_type": "kernal"
+        },
+        "net": {
+            "trainer": "ssftt",
+            "conv2d_out": 64,
+            "dim": 64
+        },
+        "train": {
+            "epochs": 100,
+            "lr": 0.001,
+            "weight_decay": 0
+        },
+        "uniq_name": "indian_0.5ssfttPCA_split",
+        "train_sign": "test",
+        "path_model_save": "./save_models/indian_0.5ssfttPCA_split",
+        "path_res": "./res_indian_0114/indian_0.5ssfttPCA_split_test_kernal_01141855",
+        "path_pic": "./res_indian_0114/indian_0.5ssfttPCA_split_test_kernal_01141855.png"
+    },
+    "eval": {
+        "classification": "                              precision    recall  f1-score   support\n\n                     Alfalfa     0.1000    0.1304    0.1132        23\n                 Corn-notill     0.0382    0.0266    0.0314       714\n                Corn-mintill     0.0750    0.0217    0.0336       415\n                        Corn     0.1169    0.0763    0.0923       118\n               Grass-pasture     0.0018    0.0041    0.0025       241\n                 Grass-trees     0.0433    0.1014    0.0607       365\n         Grass-pasture-mowed     0.0000    0.0000    0.0000        14\n               Hay-windrowed     0.4800    0.5021    0.4908       239\n                        Oats     0.0000    0.0000    0.0000        10\n              Soybean-notill     0.1752    0.1337    0.1517       486\n             Soybean-mintill     0.5164    0.1923    0.2803      1227\n               Soybean-clean     0.0323    0.0236    0.0273       296\n                       Wheat     0.0000    0.0000    0.0000       102\n                       Woods     0.1289    0.1187    0.1236       632\nBuildings-Grass-Trees-Drives     0.0910    0.3264    0.1424       193\n          Stone-Steel-Towers     0.0000    0.0000    0.0000        46\n\n                    accuracy                         0.1258      5121\n                   macro avg     0.1124    0.1036    0.0969      5121\n                weighted avg     0.2017    0.1258    0.1408      5121\n",
+        "oa": 12.575668814684631,
+        "confusion": "[[  3   0   0   0   0   0   0   7   0   8   0   1   0   0   2   2]\n [  0  19   0  28  69 303   1   1   8  11   8  10   7  83  95  71]\n [  0   3   9  23  69  93   0   3   0   6   1  25   0  87  27  69]\n [  0  18   0   9   0  25   0  22   0   0   0   0   0  28  13   3]\n [  0   1  48   0   1  14   0   0   0  14 116   0   0  47   0   0]\n [  0  15   0   0   3  37   3   4   0 138   4  64  25   0  60  12]\n [  0   0   0   0   0   0   0   0   0  14   0   0   0   0   0   0]\n [ 17   0   0   0  23   9   7 120   0   2   5  10   0   0  36  10]\n [  0   0   0   0   0   0   0   0   0   8   0   0   0   2   0   0]\n [  5   0   0   0  80  62   4   0  13  65  18   0  35   7 173  24]\n [  0  66   6   4 151 175   1  24   5  67 236   4  68 193 216  11]\n [  3   0   0   8   3  89   1  54   0   8  13   7  14  60   7  29]\n [  0   0   0   0   0   0   0   0   0   0  12  90   0   0   0   0]\n [  0 333  57   1 136   4   0   0   0  11   4   6   5  75   0   0]\n [  2  43   0   0   7   4   0  15   0  19  40   0   0   0  63   0]\n [  0   0   0   4   2  40   0   0   0   0   0   0   0   0   0   0]]",
+        "each_acc": "[13.04347826  2.66106443  2.1686747   7.62711864  0.41493776 10.1369863\n  0.         50.20920502  0.         13.3744856  19.23390383  2.36486486\n  0.         11.86708861 32.64248705  0.        ]",
+        "aa": 10.35901844108812,
+        "kappa": 4.364721672125915
+    }
+}

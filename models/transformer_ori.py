@@ -209,7 +209,7 @@ class TransFormerNet(nn.Module):
         dim_heads = dim
         mlp_head_dim = dim
 
-        self.use_mask = net_params.get('use_mask', False)
+        self.use_mask = net_params.get('use_mask', True)
         mask_size_list = [i for i in range(1, patch_size+1, 2)]
         # mask_size_list = [3,5,7,9,11,13]
         self.mask_list = self.generate_mask(patch_size**2, mask_size_list)

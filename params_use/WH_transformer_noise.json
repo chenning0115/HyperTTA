@@ -24,11 +24,11 @@
         "padding": 1
     },
     "train": {
-        "epochs": 50,
+        "epochs": 60,
         "lr": 0.001,
         "weight_decay": 0
     },
-    "uniq_name": "wh_0.2transNEW",
+    "uniq_name": "wh_0.2trans_split",
     "train_sign": "train",
     "path_model_save": ""
 }

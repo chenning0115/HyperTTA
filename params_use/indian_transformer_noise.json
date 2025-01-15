@@ -1,12 +1,12 @@
 {
     "data": {
         "data_sign": "Indian",
-        "data_file": "Indian_0.2_pc",
-        "patch_size": 13,
-        "serve_patch_size": 9,
-        "batch_size": 64,
+        "data_file": "Indian_0.5_pc",
+        "patch_size": 17,
+        "serve_patch_size": 13,
+        "batch_size": 50,
         "num_classes": 16,
-        "pca": 200,
+        "pca": -1,
         "dim_heads": 64,
         "spectral_size": 200,
         "random_rotate": true,
@@ -14,8 +14,8 @@
         "noise_type": "clean"
     },
     "net": {
-        "trainer": "transformer",
-        "use_mask": true,
+        "trainer": "CNN",
+        "use_mask": false,
         "mlp_dim": 8,
         "depth": 2,
         "dim": 64,
@@ -32,7 +32,7 @@
         "lr": 0.001,
         "weight_decay": 0
     },
-    "uniq_name": "Indian_withpca_split",
+    "uniq_name": "Indian_0.5CNN_split",
     "train_sign": "train",
     "path_model_save": ""
 }

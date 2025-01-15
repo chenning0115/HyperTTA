@@ -134,8 +134,9 @@ class SSFTTnet(nn.Module):
         )
        
         # in_conv2d = out_3d * 28
+        in_conv2d = 56
         # in_conv2d = 396
-        in_conv2d = 202
+        # in_conv2d = 202
         self.conv2d_features = nn.Sequential(
             nn.Conv2d(in_channels=in_conv2d, out_channels=64, kernel_size=(3, 3)),
             nn.BatchNorm2d(self.conv2d_out),

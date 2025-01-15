@@ -1,0 +1,99 @@
+{
+    "train_oa": {
+        "type": "index_value",
+        "index": [
+            1,
+            2
+        ],
+        "value": [
+            26.031242372467663,
+            25.87258969978033
+        ]
+    },
+    "train_aa": {
+        "type": "index_value",
+        "index": [
+            1,
+            2
+        ],
+        "value": [
+            8.472711654031057,
+            8.288543878432467
+        ]
+    },
+    "train_kappa": {
+        "type": "index_value",
+        "index": [
+            1,
+            2
+        ],
+        "value": [
+            8.311715510447748,
+            7.685377546298977
+        ]
+    },
+    "eval_time": 6.832209348678589,
+    "param": {
+        "data": {
+            "data_sign": "Indian",
+            "data_file": "Indian_0.2_pc",
+            "patch_size": 13,
+            "serve_patch_size": 9,
+            "batch_size": 64,
+            "num_classes": 16,
+            "pca": -1,
+            "dim_heads": 64,
+            "spectral_size": 200,
+            "random_rotate": true,
+            "use_saved_pca": false,
+            "noise_type": "deadlines"
+        },
+        "net": {
+            "trainer": "transformer",
+            "use_mask": true,
+            "mlp_dim": 8,
+            "depth": 2,
+            "dim": 64,
+            "heads": 20,
+            "kernal": 3,
+            "padding": 1,
+            "task_num": 3,
+            "expert_num": 1,
+            "task_label_list": [
+                [
+                    1,
+                    2,
+                    3
+                ],
+                [
+                    9,
+                    10,
+                    11
+                ]
+            ],
+            "task_weight": [
+                1,
+                0,
+                0
+            ]
+        },
+        "train": {
+            "epochs": 100,
+            "lr": 0.001,
+            "weight_decay": 0
+        },
+        "uniq_name": "Indian_0.2noPCANew_split",
+        "train_sign": "tent",
+        "path_model_save": "./save_models/Indian_0.2noPCANew_split",
+        "path_res": "./res_base/Indian_0.2noPCANew_split_tent_deadlines_01130948",
+        "path_pic": "./res_base/Indian_0.2noPCANew_split_tent_deadlines_01130948.png"
+    },
+    "eval": {
+        "classification": "                              precision    recall  f1-score   support\n\n                     Alfalfa     0.0000    0.0000    0.0000        36\n                 Corn-notill     0.7895    0.0131    0.0258      1142\n                Corn-mintill     0.1104    0.3645    0.1695       664\n                        Corn     0.0000    0.0000    0.0000       189\n               Grass-pasture     0.0000    0.0000    0.0000       386\n                 Grass-trees     0.0000    0.0000    0.0000       584\n         Grass-pasture-mowed     0.0000    0.0000    0.0000        22\n               Hay-windrowed     0.0000    0.0000    0.0000       382\n                        Oats     0.0000    0.0000    0.0000        16\n              Soybean-notill     0.0000    0.0000    0.0000       777\n             Soybean-mintill     0.3114    0.9486    0.4689      1964\n               Soybean-clean     0.0000    0.0000    0.0000       474\n                       Wheat     0.0000    0.0000    0.0000       164\n                       Woods     0.0000    0.0000    0.0000      1012\nBuildings-Grass-Trees-Drives     0.0000    0.0000    0.0000       308\n          Stone-Steel-Towers     0.0000    0.0000    0.0000        74\n\n                    accuracy                         0.2587      8194\n                   macro avg     0.0757    0.0829    0.0415      8194\n                weighted avg     0.1936    0.2587    0.1297      8194\n",
+        "oa": 25.87258969978033,
+        "confusion": "[[   0    0   12    0    0    0    0    0    0    0   24    0    0    0\n     0    0]\n [   0   15  280    0    0    0    0    0    0    0  847    0    0    0\n     0    0]\n [   0    0  242    0    0    0    0    0    0    0  422    0    0    0\n     0    0]\n [   0    0  102    0    0    0    0    0    0    0   87    0    0    0\n     0    0]\n [   0    0  179    0    0    0    0    0    0    0  207    0    0    0\n     0    0]\n [   0    0  205    0    0    0    0    0    0    0  379    0    0    0\n     0    0]\n [   0    0    0    0    0    0    0    0    0    0   22    0    0    0\n     0    0]\n [   0    0   82    0    0    0    0    0    0    0  300    0    0    0\n     0    0]\n [   0    0    5    0    0    0    0    0    0    0   11    0    0    0\n     0    0]\n [   0    0  291    0    0    0    0    0    0    0  486    0    0    0\n     0    0]\n [   0    4   97    0    0    0    0    0    0    0 1863    0    0    0\n     0    0]\n [   0    0   59    0    0    0    0    0    0    0  415    0    0    0\n     0    0]\n [   0    0    3    0    0    0    0    0    0    0  161    0    0    0\n     0    0]\n [   0    0  450    0    0    0    0    0    0    0  562    0    0    0\n     0    0]\n [   0    0  185    0    0    0    0    0    0    0  123    0    0    0\n     0    0]\n [   0    0    0    0    0    0    0    0    0    0   74    0    0    0\n     0    0]]",
+        "each_acc": "[ 0.          1.31348511 36.44578313  0.          0.          0.\n  0.          0.          0.          0.         94.85743381  0.\n  0.          0.          0.          0.        ]",
+        "aa": 8.288543878432467,
+        "kappa": 7.685377546298977
+    }
+}

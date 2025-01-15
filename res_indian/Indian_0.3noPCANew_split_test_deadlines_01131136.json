@@ -1,0 +1,66 @@
+{
+    "eval_time": 1.289665699005127,
+    "param": {
+        "data": {
+            "data_sign": "Indian",
+            "data_file": "Indian_0.3_pc",
+            "patch_size": 13,
+            "serve_patch_size": 9,
+            "batch_size": 64,
+            "num_classes": 16,
+            "pca": -1,
+            "dim_heads": 64,
+            "spectral_size": 200,
+            "random_rotate": true,
+            "use_saved_pca": false,
+            "noise_type": "deadlines"
+        },
+        "net": {
+            "trainer": "transformer",
+            "use_mask": true,
+            "mlp_dim": 8,
+            "depth": 2,
+            "dim": 64,
+            "heads": 20,
+            "kernal": 3,
+            "padding": 1,
+            "task_num": 3,
+            "expert_num": 1,
+            "task_label_list": [
+                [
+                    1,
+                    2,
+                    3
+                ],
+                [
+                    9,
+                    10,
+                    11
+                ]
+            ],
+            "task_weight": [
+                1,
+                0,
+                0
+            ]
+        },
+        "train": {
+            "epochs": 100,
+            "lr": 0.001,
+            "weight_decay": 0
+        },
+        "uniq_name": "Indian_0.3noPCANew_split",
+        "train_sign": "test",
+        "path_model_save": "./save_models/Indian_0.3noPCANew_split",
+        "path_res": "./res_indian/Indian_0.3noPCANew_split_test_deadlines_01131136",
+        "path_pic": "./res_indian/Indian_0.3noPCANew_split_test_deadlines_01131136.png"
+    },
+    "eval": {
+        "classification": "                              precision    recall  f1-score   support\n\n                     Alfalfa     0.0000    0.0000    0.0000        32\n                 Corn-notill     0.3179    0.0480    0.0835       999\n                Corn-mintill     0.0774    0.2324    0.1161       581\n                        Corn     0.0000    0.0000    0.0000       165\n               Grass-pasture     0.0000    0.0000    0.0000       338\n                 Grass-trees     0.0000    0.0000    0.0000       511\n         Grass-pasture-mowed     0.0000    0.0000    0.0000        19\n               Hay-windrowed     0.0000    0.0000    0.0000       334\n                        Oats     0.0000    0.0000    0.0000        14\n              Soybean-notill     0.0000    0.0000    0.0000       680\n             Soybean-mintill     0.2903    0.8312    0.4303      1718\n               Soybean-clean     0.0000    0.0000    0.0000       415\n                       Wheat     0.0000    0.0000    0.0000       143\n                       Woods     0.0000    0.0000    0.0000       885\nBuildings-Grass-Trees-Drives     0.0000    0.0000    0.0000       270\n          Stone-Steel-Towers     0.0000    0.0000    0.0000        65\n\n                    accuracy                         0.2247      7169\n                   macro avg     0.0428    0.0695    0.0394      7169\n                weighted avg     0.1201    0.2247    0.1242      7169\n",
+        "oa": 22.47175338261961,
+        "confusion": "[[   0    0    4    4    0    0    0    0    0    0   24    0    0    0\n     0    0]\n [   0   48  225  108    0    0    0    0    0    0  618    0    0    0\n     0    0]\n [   0    0  135    0    0    0    0    0    0    0  446    0    0    0\n     0    0]\n [   0    0   41    0    0    0    0    0    0    0  124    0    0    0\n     0    0]\n [   0    0   87    8    0    0    0    0    0    0  243    0    0    0\n     0    0]\n [   0    0  137   35    0    0    0    0    0    0  339    0    0    0\n     0    0]\n [   0    0    0    0    0    0    0    0    0    0   19    0    0    0\n     0    0]\n [   0    0   50   93    0    0    0    0    0    0  191    0    0    0\n     0    0]\n [   0    0    0    0    0    0    0    0    0    0   14    0    0    0\n     0    0]\n [   0    0  495    5    0    0    0    0    0    0  180    0    0    0\n     0    0]\n [   0   63  157   70    0    0    0    0    0    0 1428    0    0    0\n     0    0]\n [   0   40   53    0    0    0    0    0    0    0  322    0    0    0\n     0    0]\n [   0    0    1    0    0    0    0    0    0    0  142    0    0    0\n     0    0]\n [   0    0  149   31    0    0    0    0    0    0  705    0    0    0\n     0    0]\n [   0    0  189    1    0    0    0    0    0    0   80    0    0    0\n     0    0]\n [   0    0   21    0    0    0    0    0    0    0   44    0    0    0\n     0    0]]",
+        "each_acc": "[ 0.          4.8048048  23.23580034  0.          0.          0.\n  0.          0.          0.          0.         83.11990687  0.\n  0.          0.          0.          0.        ]",
+        "aa": 6.947532001093161,
+        "kappa": 4.49588362281842
+    }
+}

@@ -175,11 +175,13 @@ class HSIDataLoader(object):
         train_num, test_num = self.get_train_test_num(TR, TE)
         trainX_index2pos = {}
         testX_index2pos = {}
+        train_testX_index2pos = {}
         all_index2pos = {}
 
         patchIndex = 0
         trainIndex = 0
         testIndex = 0
+        train_test_Index = 0
         for r in range(margin, zeroPaddedX.shape[0] - margin):
             for c in range(margin, zeroPaddedX.shape[1] - margin):
                 start_x, start_y = r-margin, c-margin
@@ -192,13 +194,17 @@ class HSIDataLoader(object):
 
                 if temp_tr > 0: #train data
                     trainX_index2pos[trainIndex] = [start_x, start_y]
+                    train_testX_index2pos[train_test_Index] = [start_x, start_y]
                     trainIndex += 1
+                    train_test_Index += 1
                 elif temp_te > 0:
                     testX_index2pos[testIndex] = [start_x, start_y]
+                    train_testX_index2pos[train_test_Index] = [start_x, start_y]
                     testIndex += 1
+                    train_test_Index += 1
                 all_index2pos[patchIndex] =[start_x, start_y]
                 patchIndex = patchIndex + 1
-        return zeroPaddedX, y, trainX_index2pos, testX_index2pos, all_index2pos, margin, self.patch_size 
+        return zeroPaddedX, y, trainX_index2pos, testX_index2pos, train_test_Index, all_index2pos, margin, self.patch_size 
 
     def applyPCA(self, X, numComponents=30):
         newX = np.reshape(X, (-1, X.shape[2]))
@@ -301,28 +307,30 @@ class HSIDataLoader(object):
         print('[data preprocessing done.] data shape data=%s, label=%s' % (str(norm_data.shape), str(self.labels.shape)))
 
         #3. 获取patch 并形成batch型数据
-        base_img, labels, train_index2pos, test_index2pos, all_index2pos, margin, patch_size \
+        base_img, labels, train_index2pos, test_index2pos, train_test_index2pos, all_index2pos, margin, patch_size \
               = self.get_train_test_patches(norm_data, self.labels, self.TR, self.TE)
 
         print('------[data] split data to train, test------')
         print("train len: %s" % len(train_index2pos ))
         print("test len : %s" % len(test_index2pos ))
+        print('train_test len: %s' % len(train_test_index2pos))
         print("all len: %s" % len(all_index2pos ))
 
         print("random rotate is %s" % self.random_rotate)
         trainset = DataSetIter(base_img, labels, train_index2pos, margin, patch_size, self.append_dim, random_rotate=self.random_rotate) 
         unlabelset=DataSetIter(base_img,labels,test_index2pos,margin, patch_size, self.append_dim, random_rotate=self.random_rotate)
         testset = DataSetIter(base_img, labels, test_index2pos , margin, patch_size, self.append_dim, random_rotate=self.random_rotate) 
+        train_test_set = DataSetIter(base_img, labels, train_test_index2pos, margin, patch_size, self.append_dim, random_rotate=self.random_rotate)
         allset = DataSetIter(base_img, labels, all_index2pos, margin, patch_size, self.append_dim, random_rotate=self.random_rotate) 
         
-        return trainset, unlabelset, testset, allset
+        return trainset, unlabelset, testset, train_test_split, allset
  
     def generate_torch_dataset(self):
         # 0. 判断是否使用numpy数据集
         if self.if_numpy:
             return self.generate_numpy_dataset()
 
-        trainset, unlabelset, testset, allset = self.prepare_data()
+        trainset, unlabelset, train_test_set, testset, allset = self.prepare_data()
 
 
         multi=self.data_param.get('unlabelled_multiple',1)
@@ -342,6 +350,12 @@ class HSIDataLoader(object):
                                                 num_workers=0,
                                                 drop_last=False
                                                 )
+        train_test_loader = torch.utils.data.DataLoader(dataset=train_test_set,
+                                                batch_size=self.batch_size,
+                                                shuffle=False,
+                                                num_workers=0,
+                                                drop_last=False
+                                                )
         all_loader = torch.utils.data.DataLoader(dataset=allset,
                                                 batch_size=self.batch_size,
                                                 shuffle=False,
@@ -349,7 +363,7 @@ class HSIDataLoader(object):
                                                 drop_last=False
                                                 )
         
-        return train_loader, unlabel_loader,test_loader, all_loader
+        return train_loader, unlabel_loader, train_test_loader, test_loader, all_loader
 
        
 
@@ -357,4 +371,4 @@ class HSIDataLoader(object):
 if __name__ == "__main__":
     dataloader = HSIDataLoader({"data":{"data_path_prefix":'../../data', "data_sign": "Indian",
         "data_file": "Indian_20", "use_dump":True}})
-    train_loader, unlabel_loader, test_loader, all_loader = dataloader.generate_torch_dataset()
+    train_loader, unlabel_loader, test_loader, train_test_loader, all_loader = dataloader.generate_torch_dataset()

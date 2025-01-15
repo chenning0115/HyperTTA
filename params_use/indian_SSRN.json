@@ -1,14 +1,14 @@
 {
     "data": {
         "data_sign": "Indian",
-        "data_file": "Indian_0.2_pc",
+        "data_file": "Indian_0.5_pc",
         "diffusion_sign": false,
         "patch_size": 13,
         "test_ratio": 0.95,
         "batch_size": 64,
         "unlabelled_multiple": 1,
         "num_classes": 16,
-        "pca": -103,
+        "pca": -1,
         "dim_heads": 64,
         "spectral_size": 200,
         "perclass": 30,
@@ -30,7 +30,7 @@
         "weight": 0.1,
         "temp": 10
     },
-    "uniq_name": "indian_0.2ssrn_split",
+    "uniq_name": "indian_0.5ssrn_split",
     "train_sign": "train",
     "path_model_save": ""
 }

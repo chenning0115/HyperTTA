@@ -13,21 +13,22 @@ import plot
 from datetime import datetime
 from data_provider.info import noise_type_list 
 
-DEFAULT_RES_SAVE_PATH_PREFIX = "./res_base"
+DEFAULT_RES_SAVE_PATH_PREFIX = "./res_wh"
 
 def train_by_param(param):
     #0. recorder reset防止污染数据
     recorder.reset()
     # 1. 数据生成
     dataloader = HSIDataLoader(param)
-    train_loader, unlabel_loader, test_loader, all_loader = dataloader.generate_torch_dataset()
+    train_loader, unlabel_loader, test_loader, train_test_loader, all_loader = dataloader.generate_torch_dataset()
 
     # 2. 训练和测试
     trainer = get_trainer(param)
     trainer.train(train_loader, unlabel_loader, test_loader)
 
     start_eval_time = time.time()
-    eval_res = trainer.final_eval(test_loader)  # change eval data
+    # eval_res = trainer.final_eval(test_loader)  # change eval data
+    eval_res = trainer.final_eval(train_test_loader)  # change eval data
     end_eval_time = time.time()
     eval_time = end_eval_time - start_eval_time
     print("eval time is %s" % eval_time) 
@@ -65,6 +66,8 @@ include_path = [
     # 'pavia_ssftt.json',
 
     'WH_transformer_noise.json',
+    'WH_transformer_CNN.json',
+    'WH_SSRN.json',
 ]
 
 
@@ -120,8 +123,9 @@ def run_one_multi_times(json_str, ori_uniq_name):
 # noise_type_list_temp = ['additive', 'salt_pepper', 'kernal', 'thick_fog', 'zmguass', 'additive', 'poisson',  'stripes', 'deadlines']
 
 # noise_type_list_temp = ['salt_pepper', 'kernal', 'thick_fog']
-noise_type_list_temp = ['additive', 'salt_pepper', 'kernal', 'thick_fog']
+# noise_type_list_temp = ['additive', 'salt_pepper', 'kernal', 'thick_fog']
 # noise_type_list_temp = ['salt_pepper', 'kernal', 'thin_fog', 'thick_fog']
+noise_type_list_temp = [ 'kernal', 'thick_fog', 'poisson',  'stripes', 'deadlines']
 # noise_type_list_temp = ['thick_fog']
 
 def run_serving_mode(json_str, train_sign='test'): # serving_type = 'test' or 'tent'

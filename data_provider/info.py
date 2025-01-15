@@ -51,7 +51,7 @@ Indian_kvs_params = {
     },
 
     "poisson": {
-            "snr_db" : 13 
+            "snr_db" : 7
     },
 
     "salt_pepper": {
@@ -59,25 +59,25 @@ Indian_kvs_params = {
     },
 
     "stripes": {
-            "start": 10,
-            "end" : 20
+            "start": 3,
+            "end" : 5
     },
 
     "deadlines":{
-        "start": 10,
-        "end" : 20
+        "start": 3,
+        "end" : 5
     },
 
     "kernal": {
             # "kernal_size": 10 # PU
-            "kernal_size": 3
+            "kernal_size": 2
     },
 
     "thin_fog": {
             'spe_start': 0,
             'spe_end': 0,
             'band_width': 0,
-            'omega': 0.4,
+            'omega': 0.3,
             'alpha': 0.01,
             'beta': 1.0
     },
@@ -86,7 +86,7 @@ Indian_kvs_params = {
             'spe_start': 0,
             'spe_end': 0,
             'band_width': 0,
-            'omega': 0.7,
+            'omega': 0.5,
             'alpha': 0.01,
             'beta': 1.0
     }
@@ -162,7 +162,7 @@ WH_kvs_params = {
     },
 
     "poisson": {
-            "snr_db" : 13 
+            "snr_db" : 9 
     },
 
     "salt_pepper": {
@@ -180,14 +180,14 @@ WH_kvs_params = {
     },
 
     "kernal": {
-            "kernal_size": 10 # PU
+            "kernal_size": 5 # PU
     },
 
     "thin_fog": {
             'spe_start': 0,
             'spe_end': 0,
             'band_width': 0,
-            'omega': 0.4,
+            'omega': 0.3,
             'alpha': 0.01,
             'beta': 1.0
     },
@@ -196,7 +196,7 @@ WH_kvs_params = {
             'spe_start': 0,
             'spe_end': 0,
             'band_width': 0,
-            'omega': 0.7,
+            'omega': 0.5,
             'alpha': 0.01,
             'beta': 1.0
     }

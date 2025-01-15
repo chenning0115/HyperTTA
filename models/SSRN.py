@@ -221,7 +221,6 @@ class SPAModuleIN(nn.Module):
         #self.bn = nn.BatchNorm2d(out_channels)
 
     def forward(self, input):
-                
         out = self.s1(input)
         out = torch.squeeze(out,2)
         

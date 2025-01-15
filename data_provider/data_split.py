@@ -180,7 +180,7 @@ def run_per_class_pct():
     # signs = ['Indian']
     signs = ['Indian', 'Pavia', 'WH']
     data_path_prefix = '../data'
-    train_pct = [0.20]
+    train_pct = [0.50]
     for data_sign in signs:
         for pct in train_pct:
             save_path = '../data/%s/%s_%s_pc_split.mat' %(data_sign, data_sign, pct)
